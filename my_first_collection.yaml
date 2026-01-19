@@ -1,0 +1,152 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_5e3e39b6dee640a9a973541d1cf75965
+  created: 1768691093578
+  modified: 1768691093578
+  description: ""
+collection:
+  - name: NotaFiscal
+    meta:
+      id: fld_e89957ecdb9744d8933087eec27ccd8d
+      created: 1768691103372
+      modified: 1768691103372
+      sortKey: -1768691103372
+      description: ""
+    children:
+      - url: "{{ _['url-api'] }}/nota-fiscal"
+        name: Salvar Nota Fiscal
+        meta:
+          id: req_7c41833c393c4686a976d7534136228c
+          created: 1768691106985
+          modified: 1768691443183
+          isPrivate: false
+          description: ""
+          sortKey: -1768691106985
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigoVerificacao": "",
+              "numero": "123456",
+              "tipo": "RECEBIDA",
+
+              "emissor": "Fornecedor XPTO LTDA",
+              "receptor": "Construtora Rich Engenharia",
+              "dataEmissao": "2026-01-15T10:30:00",
+              "dataVencimento": "2026-02-15T23:59:59",
+              "dataPagamento": null,
+              "valorEmitido": 15000.75,
+              "valorPago": null,
+              "obraId": "7c3e1c2a-8c2e-4c9a-9b3a-1f7a9c0b2d11"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _['url-api'] }}/nota-fiscal/8bc662dd-44f8-4f55-98f2-8ebafe47b240"
+        name: Find By ID
+        meta:
+          id: req_b020f6818b8c408b956813749e08a17d
+          created: 1768780385042
+          modified: 1768782223995
+          isPrivate: false
+          description: ""
+          sortKey: -1768780385042
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _['url-api'] }}/nota-fiscal/list-all"
+        name: List All
+        meta:
+          id: req_406d7ea136e84e79b6daf509dcf246a6
+          created: 1768782179741
+          modified: 1768782204278
+          isPrivate: false
+          description: ""
+          sortKey: -1768782179741
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _['url-api'] }}/nota-fiscal/list-paginated"
+        name: List All Paginated
+        meta:
+          id: req_a30bdad29f62474aa5b5d57253246aa5
+          created: 1768783358353
+          modified: 1768783364078
+          isPrivate: false
+          description: ""
+          sortKey: -1768781282391.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_95e21518f3b165ee7c07abf760d841b0c167c899
+    created: 1768691093587
+    modified: 1768691093587
+environments:
+  name: Base Environment
+  meta:
+    id: env_95e21518f3b165ee7c07abf760d841b0c167c899
+    created: 1768691093586
+    modified: 1768691093586
+    isPrivate: false
+  subEnvironments:
+    - name: local
+      meta:
+        id: env_ab07bde571cf467f83d6325501ba9fba
+        created: 1768691149930
+        modified: 1768691222659
+        isPrivate: false
+        sortKey: 1768691149928
+      data:
+        url-api: http://localhost:8080
+      color: "#1d33d7"
