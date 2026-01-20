@@ -7,6 +7,7 @@ import com.rich.nf_control.core.domain.nota_fiscal.enums.NfStatus;
 import com.rich.nf_control.core.domain.nota_fiscal.exception.NotaFiscalNaoEncontradaException;
 import com.rich.nf_control.core.domain.nota_fiscal.model.NotaFiscal;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -44,4 +45,5 @@ public class NotaFiscalUseCase {
     public PageResult<NotaFiscal> listarNotasFiscaisPaginadas(int page, int size) {
         return this.notaFiscalRepository.listPaginated(page, size);
     }
+
 }

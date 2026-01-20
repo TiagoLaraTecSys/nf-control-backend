@@ -1,10 +1,12 @@
 package com.rich.nf_control.core.application.shared.pagination;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class PageResult<T> {
 
     private final List<T> items;
