@@ -15,3 +15,6 @@ spring:
   sql:
     init:
       mode: never
+
+open-api:
+  apiKey: ${OPENAI_API_KEY}
