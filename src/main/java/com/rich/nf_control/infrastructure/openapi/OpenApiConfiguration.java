@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenApiConfiguration {
 
-    @Value("${openapi.apiKey}")
+    @Value("${open-api.apiKey}")
     private String apiKey;
 
     @Bean
