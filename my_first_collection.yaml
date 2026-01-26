@@ -20,7 +20,7 @@ collection:
         meta:
           id: req_7c41833c393c4686a976d7534136228c
           created: 1768691106985
-          modified: 1768691443183
+          modified: 1769035952697
           isPrivate: false
           description: ""
           sortKey: -1768691106985
@@ -29,10 +29,10 @@ collection:
           mimeType: application/json
           text: |
             {
-              "codigoVerificacao": "",
+              "codigoVerificacao": "NFE123",
               "numero": "123456",
               "tipo": "RECEBIDA",
-
+              "status": "PENDENTE",
               "emissor": "Fornecedor XPTO LTDA",
               "receptor": "Construtora Rich Engenharia",
               "dataEmissao": "2026-01-15T10:30:00",
@@ -40,7 +40,6 @@ collection:
               "dataPagamento": null,
               "valorEmitido": 15000.75,
               "valorPago": null,
-              "obraId": "7c3e1c2a-8c2e-4c9a-9b3a-1f7a9c0b2d11"
             }
         headers:
           - name: Content-Type
@@ -126,6 +125,41 @@ collection:
             send: true
             store: true
           rebuildPath: true
+      - url: "{{ _['url-api'] }}/nota-fiscal/extrair"
+        name: Extrair Dados
+        meta:
+          id: req_731c8750daa94a34862a8df0c3500fe0
+          created: 1769039431639
+          modified: 1769044238217
+          isPrivate: false
+          description: ""
+          sortKey: -1769039431639
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: file
+              value: ""
+              description: ""
+              disabled: false
+              multiline: true
+              fileName: /Users/tiagolara/Downloads/42054072253782997000145000000000000724096729479894.pdf
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
@@ -144,7 +178,7 @@ environments:
       meta:
         id: env_ab07bde571cf467f83d6325501ba9fba
         created: 1768691149930
-        modified: 1768691222659
+        modified: 1768864945107
         isPrivate: false
         sortKey: 1768691149928
       data:
