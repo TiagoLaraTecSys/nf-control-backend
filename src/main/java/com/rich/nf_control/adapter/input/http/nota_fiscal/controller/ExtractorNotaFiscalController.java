@@ -1,6 +1,7 @@
 package com.rich.nf_control.adapter.input.http.nota_fiscal.controller;
 
 import com.rich.nf_control.adapter.out.ai.OpenAiNotaFiscalExtractor;
+import com.rich.nf_control.core.domain.nota_fiscal.model.NotaFiscal;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +28,8 @@ public class ExtractorNotaFiscalController {
             ) {
 
         try {
-            this.extractor.extrairDadosNota(file);
-            return ResponseEntity.accepted().build();
+            NotaFiscal nf = this.extractor.extrairDadosNota(file);
+            return ResponseEntity.ok(nf);
         } catch (IOException e) {
             e.printStackTrace();
             return ResponseEntity.internalServerError().build();
