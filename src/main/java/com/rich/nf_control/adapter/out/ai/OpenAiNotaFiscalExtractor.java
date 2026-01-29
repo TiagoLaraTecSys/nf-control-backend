@@ -57,7 +57,7 @@ public class OpenAiNotaFiscalExtractor implements NotaFiscalFileExtractor {
                 .fileId(fileId)
                 .build();
         var response = openAIClient.responses().create(ResponseCreateParams.builder()
-                        .model(ChatModel.GPT_5_2)
+                        .model(ChatModel.GPT_4_1_MINI)
                         .inputOfResponse(
                                 List.of(
                                         ResponseInputItem.ofMessage(
